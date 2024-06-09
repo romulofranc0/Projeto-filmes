@@ -2,7 +2,7 @@ package com.example.lista.controller;
 
 import com.example.lista.model.Movie;
 import com.example.lista.model.OmdbResponse;
-import com.example.lista.service.OmdbService;
+import com.example.lista.Service.OmdbService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
