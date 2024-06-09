@@ -19,7 +19,7 @@ public class OmdbController {
     }
 
     @GetMapping("/movies")
-    public Mono<OmdbResponse> getMovies(@RequestParam String title) {
+    public Mono<OmdbResponse> getAllMovies(@RequestParam String title) {
         return omdbService.getMovieData(title);
     }
 }
