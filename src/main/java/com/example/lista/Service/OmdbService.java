@@ -1,5 +1,6 @@
-package com.example.lista.service;
+package com.example.lista.Service;
 
+import com.example.lista.model.Movie;
 import com.example.lista.model.OmdbResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -24,13 +25,16 @@ public class OmdbService {
                         .queryParam("apikey", API_KEY)
                         .build())
                 .retrieve()
-                .bodyToMono(OmdbResponse.class)
-                .doOnNext(response -> {
-                    if (response == null || response.getSearch() == null) {
-                        System.err.println("Received null response or search list from OMDB API");
-                    } else {
-                        System.out.println("Received response: " + response);
-                    }
-                });
+                .bodyToMono(OmdbResponse.class);
+               }
+    public Mono<Movie> getMovie(String title) {
+        return webClient.get()
+                .uri(uriBuilder -> uriBuilder
+                        .queryParam("t", title)
+                        .queryParam("apikey", API_KEY)
+                        .build())
+                .retrieve()
+                .bodyToMono(Movie.class);
     }
-}
+    }
+

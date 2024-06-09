@@ -1,5 +1,6 @@
 package com.example.lista.controller;
 
+import com.example.lista.model.Movie;
 import com.example.lista.model.OmdbResponse;
 import com.example.lista.service.OmdbService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +19,11 @@ public class OmdbController {
         this.omdbService = omdbService;
     }
 
-    @GetMapping("/movies")
+    @GetMapping("/allmovies")
     public Mono<OmdbResponse> getAllMovies(@RequestParam String title) {
         return omdbService.getMovieData(title);
     }
+
+    @GetMapping("/movie")
+    public Mono<Movie> getMovie(@RequestParam String title) {return omdbService.getMovie(title);}
 }
