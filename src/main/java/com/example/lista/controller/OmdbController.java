@@ -25,5 +25,5 @@ public class OmdbController {
     }
 
     @GetMapping("/movie")
-    public Mono<Movie> getMovie(@RequestParam String title) {return omdbService.getMovie(title);}
+    public Mono<Movie> getMovie(@RequestParam String id) {return omdbService.getMovieById(id);}
 }

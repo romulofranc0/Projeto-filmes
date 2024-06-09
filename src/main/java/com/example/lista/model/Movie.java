@@ -15,15 +15,22 @@ public class Movie {
     @JsonProperty("imdbID")
     private String imdbId;
 
+    @JsonProperty("Actors")
+    private String actors;
+
     @JsonProperty("Type")
     private String type;
 
     @JsonProperty("Poster")
     private String poster;
 
-//     "Title": "Inception",
-//             "Year": "2010",
-//             "imdbID": "tt1375666",
-//             "Type": "movie",
-//             "Poster": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg"
+    @JsonProperty("Plot")
+    private String plot;
+
+    @JsonProperty("Metascore")
+    private String metascore;
+
+    @JsonProperty("imdbRating")
+    private String imdbRating;
+
 }

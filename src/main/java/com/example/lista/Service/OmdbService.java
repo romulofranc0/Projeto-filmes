@@ -27,10 +27,10 @@ public class OmdbService {
                 .retrieve()
                 .bodyToMono(OmdbResponse.class);
                }
-    public Mono<Movie> getMovie(String title) {
+    public Mono<Movie> getMovieById(String id) {
         return webClient.get()
                 .uri(uriBuilder -> uriBuilder
-                        .queryParam("t", title)
+                        .queryParam("i", id)
                         .queryParam("apikey", API_KEY)
                         .build())
                 .retrieve()
