@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Busca de Filmes</title>
+  <link rel="stylesheet" href="busca-geral.component.css">
+</head>
+<body>
+<div class="container">
+  <h1>Busca de Filmes</h1>
+  <div class="search-box">
+    <input type="text" pInputText placeholder="Digite o nome do filme..." [(ngModel)]="searchQuery" />
+    <button pButton type="button" label="Buscar" icon="pi pi-search" (click)="search()"></button>
+  </div>
+</div>
+
+</body>
+</html>
