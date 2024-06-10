@@ -1,63 +1,68 @@
-* {
-
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
 body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f0f0f0;
 }
 
 .container {
-  text-align: center;
-  background-color: #fff;
-  padding: 40px;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-  margin-bottom: 20px;
-  color: #333;
-}
-
-form {
+.search-box {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 10px;
+  justify-content: space-between;
 }
 
-input[type="text"] {
-  padding: 30px;
-  width: 300px;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  outline: none;
-  transition: border-color 0.3s;
-}
-
-input[type="text"]:focus {
-  border-color: #007bff;
+.search-box p-floatLabel {
+  flex: 1;
 }
 
 button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  background-color: #007bff;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  margin-left: 10px;
 }
 
-button:hover {
-  background-color: #0056b3;
+.movies-list {
+  margin-top: 20px;
+}
+
+.movie-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.movie-poster {
+  width: 50px;
+  height: 75px;
+  margin-right: 10px;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-info h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.movie-info p {
+  margin: 5px 0 0;
 }
