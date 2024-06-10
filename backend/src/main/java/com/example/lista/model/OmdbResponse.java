@@ -3,9 +3,11 @@ package com.example.lista.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
+@Setter
 @Data
 public class OmdbResponse {
     @JsonProperty("Search")
@@ -15,15 +17,4 @@ public class OmdbResponse {
     @JsonProperty("Response")
     private String response;
 
-    public void setSearch(List<Movie> search) {
-        this.search = search;
-    }
-
-    public void setTotalResults(String totalResults) {
-        this.totalResults = totalResults;
-    }
-
-    public void setResponse(String response) {
-        this.response = response;
-    }
 }
