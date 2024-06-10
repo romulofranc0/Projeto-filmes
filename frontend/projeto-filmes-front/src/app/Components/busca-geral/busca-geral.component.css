@@ -1,5 +1,5 @@
 * {
-  margin: 0;
+
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
@@ -26,15 +26,15 @@ h1 {
   color: #333;
 }
 
-.search-box {
+form {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
 
-input[pInputText] {
-  padding: 10px;
+input[type="text"] {
+  padding: 30px;
   width: 300px;
   border: 2px solid #ccc;
   border-radius: 4px;
@@ -43,11 +43,11 @@ input[pInputText] {
   transition: border-color 0.3s;
 }
 
-input[pInputText]:focus {
+input[type="text"]:focus {
   border-color: #007bff;
 }
 
-button[pButton] {
+button {
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
@@ -58,6 +58,6 @@ button[pButton] {
   transition: background-color 0.3s;
 }
 
-button[pButton]:hover {
+button:hover {
   background-color: #0056b3;
 }
