@@ -4,7 +4,7 @@ import {InputTextModule} from "primeng/inputtext";
 import {ButtonModule} from "primeng/button";
 import {HttpClientModule} from "@angular/common/http";
 import {FloatLabelModule} from "primeng/floatlabel";
-import {NgForOf, NgIf, NgOptimizedImage} from "@angular/common";
+import {CommonModule, NgForOf, NgIf, NgOptimizedImage} from "@angular/common";
 
 
 
@@ -21,6 +21,7 @@ import {NgForOf, NgIf, NgOptimizedImage} from "@angular/common";
     NgIf,
     NgOptimizedImage,
     NgForOf,
+    CommonModule
 
   ],
   providers:[NgModule],
