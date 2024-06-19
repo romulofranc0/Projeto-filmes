@@ -18,7 +18,7 @@ public class OmdbService {
         this.webClient = webClientBuilder.baseUrl(BASE_URL).build();
     }
 
-    public Mono<OmdbResponse> getMovieData(String title) {
+    public Flux<OmdbResponse> getMovieData(String title) {
         return webClient.get()
                 .uri(uriBuilder -> uriBuilder
                         .queryParam("s", title)
