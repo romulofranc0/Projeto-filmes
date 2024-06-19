@@ -20,7 +20,7 @@ public class OmdbController {
     }
 
     @GetMapping("/allmovies")
-    public Mono<OmdbResponse> getAllMovies(@RequestParam String title) {
+    public Flux<OmdbResponse> getAllMovies(@RequestParam String title) {//mudar MONO para Flux
         return omdbService.getMovieData(title);
     }
 
