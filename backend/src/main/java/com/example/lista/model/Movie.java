@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @Getter
 public class Movie {
-    // Getters and setters
+
     @JsonProperty("Title")
     private String title;
 

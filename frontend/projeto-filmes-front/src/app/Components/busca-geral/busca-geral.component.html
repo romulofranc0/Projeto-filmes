@@ -1,17 +1,24 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Busca de Filmes</title>
-  <link rel="stylesheet" href="busca-geral.component.css">
-</head>
-<body>
-<div class="card flex justify-content-center">
-  <p-floatLabel>
-    <input pInputText id="title" />
-    <label for="title">Buscar Filme</label>
-  </p-floatLabel>
+<div>
+  <h2>Movie List</h2>
+  <input [(ngModel)]="title" placeholder="Enter movie title">
+  <button (click)="searchMovies()">Search</button>
+
+  <div *ngIf="movies.length">
+    <p-table [value]="movies">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Title</th>
+          <th>Year</th>
+          <th>Poster</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-movie>
+        <tr>
+          <td>{{ movie.Title }}</td>
+          <td>{{ movie.Year }}</td>
+          <td><img [src]="movie.Poster" alt="{{ movie.Title }}" height="100"></td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
 </div>
-</body>
-</html>

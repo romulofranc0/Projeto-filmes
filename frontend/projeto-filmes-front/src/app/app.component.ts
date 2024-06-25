@@ -1,16 +1,11 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import {BuscaGeralComponent} from "./Components/busca-geral/busca-geral.component";
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, BuscaGeralComponent],
-
-  template: `
-    <app-busca-geral/>
-  `
+  imports: [RouterModule],
+  template: '<router-outlet></router-outlet>',
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-}
+export class AppComponent {}

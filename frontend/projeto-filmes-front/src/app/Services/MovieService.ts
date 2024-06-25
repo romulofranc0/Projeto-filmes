@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
-import {OmdbResponse} from "./models/OmdbResponse";
-import {Movie} from "./models/Movie";
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Movie } from '../models/Movie';
+import { OmdbResponse } from '../models/OmdbResponse';
 
 @Injectable({
   providedIn: 'root'
 })
-export class OmdbService {
-
-  private baseUrl: string = 'http://localhost:4200/';
+export class MovieService {
+  private baseUrl = 'http://localhost:4200';
 
   constructor(private http: HttpClient) { }
 

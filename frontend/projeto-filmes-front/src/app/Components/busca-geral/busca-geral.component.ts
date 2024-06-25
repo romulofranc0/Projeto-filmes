@@ -1,32 +1,26 @@
-import {Component, NgModule} from '@angular/core';
-import {FormsModule} from "@angular/forms";
-import {InputTextModule} from "primeng/inputtext";
-import {ButtonModule} from "primeng/button";
-import {HttpClientModule} from "@angular/common/http";
-import {FloatLabelModule} from "primeng/floatlabel";
-import {CommonModule, NgForOf, NgIf, NgOptimizedImage} from "@angular/common";
-
-
-
+import { Component } from '@angular/core';
+import { MovieService } from '../../Services/MovieService';
+import { OmdbResponse } from '../../models/OmdbResponse';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { TableModule } from 'primeng/table';
 
 @Component({
   selector: 'app-busca-geral',
   standalone: true,
-  imports: [
-    FormsModule,
-    InputTextModule,
-    ButtonModule,
-    HttpClientModule,
-    FloatLabelModule,
-    NgIf,
-    NgOptimizedImage,
-    NgForOf,
-    CommonModule
-
-  ],
-  providers:[NgModule],
+  imports: [CommonModule, FormsModule, TableModule],
   templateUrl: './busca-geral.component.html',
-  styleUrl: './busca-geral.component.css'
+  styleUrls: ['./busca-geral.component.css']
 })
 export class BuscaGeralComponent {
+  movies: OmdbResponse[] = [];
+  title: string = '';
+
+  constructor(private movieService: MovieService) { }
+
+  searchMovies(): void {
+    this.movieService.getAllMovies(this.title).subscribe(movies => {
+      this.movies = movies;
+    });
+  }
 }
